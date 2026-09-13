@@ -1,6 +1,7 @@
 import { ToastContainer } from 'react-toastify'
 import Navbar from './Navbar.jsx'
 import Hero from './Hero.jsx'
+import Technologies from './Technologies.jsx'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Technologies />
       </main>
       <ToastContainer />
     </>
