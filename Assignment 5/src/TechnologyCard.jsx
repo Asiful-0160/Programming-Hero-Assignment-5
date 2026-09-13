@@ -1,4 +1,4 @@
-function TechnologyCard({ technology }) {
+function TechnologyCard({ technology, isAdded, onAddToStack }) {
   const { name, icon, badge, description, category, difficulty, rating } = technology
 
   return (
@@ -16,8 +16,13 @@ function TechnologyCard({ technology }) {
           <span className="text-amber-400" aria-hidden="true">★</span> {rating.toFixed(1)}
         </span>
       </div>
-      <button type="button" className="btn add-stack-button" disabled>
-        Add to Stack
+      <button
+        type="button"
+        className="btn add-stack-button"
+        disabled={isAdded}
+        onClick={() => onAddToStack(technology)}
+      >
+        {isAdded ? '✓ Added to Stack' : 'Add to Stack'}
       </button>
     </article>
   )

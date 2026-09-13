@@ -139,7 +139,88 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
+  align-items: start;
+  gap: 28px;
   margin-top: 40px;
+}
+
+.stack-panel {
+  padding: 20px;
+  border: 1px solid #edf1f6;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 2px 5px #151c2f04;
+}
+
+.empty-stack {
+  margin-top: 20px;
+  padding: 24px 12px;
+  border: 1px dashed #dce4ee;
+  border-radius: 12px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.stack-items {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.remove-item {
+  flex-shrink: 0;
+  min-width: 32px;
+  min-height: 44px;
+  color: #94a3b8;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  color: #ef4444;
+}
+
+.remove-all {
+  width: 100%;
+  min-height: 36px;
+  height: auto;
+  margin-top: 44px;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  background: white;
+  color: #ef4444;
+  box-shadow: none;
+}
+
+.remove-all:hover {
+  background: #fff1f2;
+}
+
+.stack-panel button:focus-visible,
+.add-stack-button:focus-visible {
+  outline: 2px solid #8535ef;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 .technology-card {
@@ -190,8 +271,7 @@ body {
   white-space: nowrap;
 }
 
-.add-stack-button,
-.add-stack-button:disabled {
+.add-stack-button {
   width: 100%;
   min-height: 38px;
   height: auto;
@@ -203,6 +283,16 @@ body {
   font-size: 12px;
   font-weight: 400;
   box-shadow: none;
+}
+
+.add-stack-button:disabled {
+  background: #e8edf3;
+  color: #63738b;
+  cursor: not-allowed;
+}
+
+.add-stack-button:hover:not(:disabled) {
+  background: #252c3e;
 }
 
 @media (max-width: 1023px) {

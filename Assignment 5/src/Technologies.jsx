@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import TechnologyCard from './TechnologyCard.jsx'
+import YourStack from './YourStack.jsx'
 
-function Technologies() {
+function Technologies({ stack, onAddToStack, onRemove, onRemoveAll }) {
   const [technologies, setTechnologies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -40,6 +41,8 @@ function Technologies() {
         Discover the tools and technologies for your ideal development stack.
       </p>
 
+      <div className="catalog-layout">
+      <div>
       {loading ? (
         <div className="flex items-center gap-3 py-10 text-slate-500" role="status">
           <span className="loading loading-spinner loading-sm" aria-hidden="true" />
@@ -52,10 +55,18 @@ function Technologies() {
       ) : (
         <div className="technology-grid">
           {technologies.map((technology) => (
-            <TechnologyCard key={technology.id} technology={technology} />
+            <TechnologyCard
+              key={technology.id}
+              technology={technology}
+              isAdded={stack.some((item) => item.id === technology.id)}
+              onAddToStack={onAddToStack}
+            />
           ))}
         </div>
       )}
+      </div>
+      <YourStack stack={stack} onRemove={onRemove} onRemoveAll={onRemoveAll} />
+      </div>
     </section>
   )
 }
