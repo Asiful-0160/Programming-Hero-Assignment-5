@@ -2,7 +2,7 @@ function TechnologyCard({ technology, isAdded, onAddToStack }) {
   const { name, icon, badge, description, category, difficulty, rating } = technology
 
   return (
-    <article className="technology-card">
+    <article className={`technology-card${isAdded ? ' technology-card-selected' : ''}`}>
       <div className="flex items-center justify-between gap-3">
         <img src={icon} alt={`${name} logo`} width="28" height="28" loading="lazy" />
         <span className="technology-badge">{badge}</span>
