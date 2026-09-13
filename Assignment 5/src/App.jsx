@@ -3,6 +3,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import Navbar from './Navbar.jsx'
 import Hero from './Hero.jsx'
 import Technologies from './Technologies.jsx'
+import Footer from './Footer.jsx'
 
 function App() {
   const [stack, setStack] = useState([])
@@ -41,6 +42,7 @@ function App() {
           onRemoveAll={removeAll}
         />
       </main>
+      <Footer />
       <ToastContainer />
     </>
   )
