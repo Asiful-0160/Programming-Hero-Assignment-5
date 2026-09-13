@@ -2,6 +2,8 @@
 
 Dev Stack Builder is a React learning project where visitors can explore development technologies and put together a stack for their next project. The catalog includes 12 technologies with descriptions, categories, difficulty levels, and sample ratings.
 
+**Live site:** [Dev Stack Builder](https://dev-stack-builder-three.vercel.app/)
+
 ## ✨ Main features
 
 1. **Technology catalog:** Loads technology data from a local JSON file and displays responsive cards, with loading and error messages.
@@ -75,7 +77,6 @@ Assignment 5/
 - Technology icons load from external image URLs. Ratings are sample catalog data.
 - Sign In and Sign Up are visual buttons; account registration and login are not implemented.
 - Projects, Careers, Privacy, and Terms links do not have destination content yet. Social links open the platforms' homepages.
-- The live deployment link will be added after deployment.
 
 ## 💡 React questions and answers
 
